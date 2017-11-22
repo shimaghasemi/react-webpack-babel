@@ -1,15 +1,29 @@
-import React from 'react';
-import 'normalize.css';
-import 'styles/index.scss';
+import React from 'react'
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+} from 'react-router-dom'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>It Works!</h1>
-				<p>This React project just works including <span className="redBg">module</span> local styles.</p>
-				<p>Enjoy!</p>
-      </div>
-    )
-  }
+import Home from './Home'
+import Login from './Login'
+import Users from './Users'
+import NotMatch from './404'
+
+function App() {
+	return (
+		<Router>
+			<Switch>
+				<Route exact path="/" component={Login} />
+				<Route path="/home" render={() => (
+					<Home>
+						<Route path="/home/users" component={Users} />
+					</Home>
+				)} />
+				<Route path="*" component={NotMatch}/>
+			</Switch>
+		</Router>
+	)
 }
+
+export default App
