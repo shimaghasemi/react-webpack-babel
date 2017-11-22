@@ -27,10 +27,7 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	resolve: {
-		extensions: ['.js', '.jsx'],
-		alias: {
-			img: path.resolve(__dirname, '/assets/img/')
-		}
+		extensions: ['.js', '.jsx']
 	},
 	module: {
 		loaders

@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var WebpackShellPlugin = require('webpack-shell-plugin');
 
 loaders.push({
 	test: /\.scss$/,
@@ -57,6 +58,9 @@ module.exports = {
 				css: ['style.css'],
 				js: ['bundle.js'],
 			}
+		}),
+		new WebpackShellPlugin({
+			onBuildEnd: ["sed -i 's#\\./#/#g' ./build/index.html"]
 		})
 	]
 };

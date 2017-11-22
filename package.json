@@ -3,6 +3,8 @@
   "version": "0.0.4",
   "description": "React Webpack Babel Starter Kit",
   "main": "''",
+  "author": "Ali Naseri",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "start": "webpack-dev-server --progress --profile --colors",
@@ -10,13 +12,6 @@
     "dev": " webpack-dashboard -- webpack-dev-server",
     "test": "export NODE_ENV=test && jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alicoding/react-webpack-babel"
-  },
-  "author": "Ali Al Dallal",
-  "license": "MIT",
-  "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
     "node-sass": "^4.3.0",
     "normalize.css": "^7.0.0",
@@ -58,7 +53,8 @@
     "webpack": "^3.6.0",
     "webpack-cleanup-plugin": "^0.4.2",
     "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-dev-server": "^2.4.1",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "jest": {
     "verbose": true,
