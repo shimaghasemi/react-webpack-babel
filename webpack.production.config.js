@@ -5,7 +5,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var WebpackShellPlugin = require('webpack-shell-plugin');
 
 loaders.push({
 	test: /\.scss$/,
@@ -19,7 +18,7 @@ module.exports = {
 		'./styles/index.scss'
 	],
 	output: {
-		publicPath: './',
+		publicPath: '/',
 		path: path.join(__dirname, 'build'),
 		filename: '[chunkhash].js'
 	},
@@ -45,7 +44,7 @@ module.exports = {
 			}
 		}),
 		new CopyWebpackPlugin([
-			{from: './assets', to: './assets'}
+			{ from: './assets', to: './assets' }
 		]),
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		new ExtractTextPlugin({
@@ -58,9 +57,6 @@ module.exports = {
 				css: ['style.css'],
 				js: ['bundle.js'],
 			}
-		}),
-		new WebpackShellPlugin({
-			onBuildEnd: ["sed -i 's#\\./#/#g' ./build/index.html"]
 		})
 	]
 };
