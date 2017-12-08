@@ -5,10 +5,10 @@ import {
 	Switch,
 } from 'react-router-dom'
 
-import Home from './Home'
-import Login from './Login'
-import Users from './Users'
-import NotMatch from './404'
+import Home from './container/Home'
+import Login from './container/Login'
+import Users from './container/Users'
+import NotMatch from './container/404'
 
 function App() {
 	return (
