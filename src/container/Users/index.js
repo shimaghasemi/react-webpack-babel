@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
+import query from '../../common/Query'
 
-export default class Login extends Component {
-    state = {
-        email: '',
-        password: '',
-    }
+export default class Users extends Component {
+	state = {
 
-    render() {
-        const { email, password } = this.state;
+	}
 
-        return (
-            <div className="login">
-                <div className="background">
-                    <p>Usersssssssss</p>
-                </div>
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div className="users">
+				users
+			</div>
+		)
+	}
 }
